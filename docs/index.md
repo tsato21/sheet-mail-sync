@@ -26,7 +26,7 @@ This project is a Google Apps Script (GAS) that automates the process of extract
 </div>
 
 4. **Customize Values**: 
-  - Customize the values in the `Initial Setting` sheet to match your needs.
+  - **Customize the values in orange range of each sheet** The pre-set information is sample one. Customize them to match your needs.
 <div style="margin-left: 30px">
   <img src="assets/images/sheet-name_pre-criteria.png" alt="Image of Initial Setting Values" width="400" height="200">
 </div>
@@ -38,14 +38,14 @@ This project is a Google Apps Script (GAS) that automates the process of extract
 
 ## Usage
 
-1. **Custom Menu in Google Sheets**: The script automatically adds Custom Menu to your Google Sheet. Use this menu to execute script functions like 'Display URL Share Mail Info' and 'Display Result and Pass Mail Info'.
+1. **Custom Menu in Google Sheets**: The script automatically adds Custom Menu to your Google Sheet. Use this menu to execute script functions like `Display URL Share Mail Info` and `Display Result and Pass Mail Info`.
 <div style="margin-left: 30px">
   <img src="assets/images/custom-menu.png" alt="Image of Custom Menu Button" width="400" height="200">
 </div>
 
 2. **Processing Emails and Updating Sheets**: The script reads emails based on the specified subjects and body phrases, categorizes them, and extracts the designated items. After processing the emails, the script updates designated Google Sheets with the extracted information. The type of information extracted and updated on the sheets depends on the function that is processing the emails:
 
-  - `Display URL Share Mail Info`: This extracts URL share mail information from the emails and updates it on the sheet. The information extracted includes:
+  - **`Display URL Share Mail Info`**: This extracts URL share mail information from the emails and updates it on the sheet.
 
     The target email elements are specified in `Initial Setting` sheet:
 
@@ -55,7 +55,7 @@ This project is a Google Apps Script (GAS) that automates the process of extract
       <img src="assets/images/keys-url-share-email.png" alt="Image of Initial Setting Sheet" width="400" height="200">
     </div>
 
-    The extracted information includes.
+    The extracted information includes the following:
 
     - Recipients: Only the email address is extracted, excluding the account name. For instance, from "Taro TANAKA<xxxx@gmail.com>", only "xxxx@gmail.com" is extracted.
     - Subject: The subject line of the email.
@@ -66,7 +66,7 @@ This project is a Google Apps Script (GAS) that automates the process of extract
       <img src="assets/images/display-url-share-email.png" alt="Image of URL Share Email Keys" width="500" height="300">
     </div>
 
-  - `Display Result and Pass Mail Info`: This function handles two types of emails simultaneously: result share email and pass mail.
+  - **`Display Result and Pass Mail Info`**: This function handles two types of emails simultaneously: result share email and pass mail.
 
       - **Result Share Email**: The function extracts target emails with the designated subject declared in cell C2. It then sorts out the emails depending on the body phrase declared in cell C4 for full faculty and cell C5 for adjunct faculty. The extracted information (Recipients, Subject, Body, Attachment File Name, Faculty ID) is then displayed in the sheets whose names are declared in cells C7 and C8.
       <div style="margin-left: 30px">
@@ -92,7 +92,7 @@ This project is a Google Apps Script (GAS) that automates the process of extract
   - **Orange Range**: This area is designated for the user to input the original data. It's crucial to ensure that the correct information is entered into each column.
   - **Red Range**: This area displays the results of the comparison. If an item matches the original data, it will display "MATCH". If it doesn't match, it will display "NOT MATCH" or "EMPTY" and other information, depending on the situation. The "Check" section provides a final result, indicating whether all items have matched (OK) or not (CAREFUL).
     <div style="margin-left: 30px">
-      <img src="assets/images/check-url-share-email.png" alt="Image of Pass Share Email Sheet" width="500" height="200">
+      <img src="assets/images/check-url-share-email.png" alt="Image of Pass Share Email Sheet" width="600" height="200">
     </div>    
 
 ## Key Components of Script
@@ -120,6 +120,7 @@ This project is a Google Apps Script (GAS) that automates the process of extract
 - `displayURLShareMailInfo()`: This function retrieves URL share mail information, processes it (e.g., parsing, validation), and then updates the relevant sheet with this information. It's responsible for ensuring that the sheet accurately reflects the current state of URL share mail info.
 
 - `displayResultAndPassMailInfo()`: This function handles the retrieval, processing (e.g., parsing, validation), and sheet updating for result sharing and pass mail information. It ensures that the sheet is kept up-to-date with the latest result sharing and pass mail info.
+
 ## Others
 
 - **Error Handling**: The script includes robust Error Handling to log issues and alert users in case of any processing failures.
