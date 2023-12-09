@@ -76,7 +76,7 @@ This project is a Google Apps Script (GAS) that automates the process of extract
         <img src="assets/images/display-result-share-full-email.png" alt="Image of Result Share Email Sheet" width="500" height="300">
       </div>      
       <div style="margin-left: 30px">
-        <img src="assets/images/display-result-share-adj-email.png" alt="Image of Result Share Email Sheet" width="400" height="200">
+        <img src="assets/images/display-result-share-adj-email.png" alt="Image of Result Share Email Sheet" width="500" height="300">
       </div>      
 
       - **Pass Mail**: The function extracts target emails with the subject declared in cell C3. The extracted information (Recipients, Subject, Body) is then displayed in the sheet whose name is declared in cell C9.
@@ -92,7 +92,7 @@ This project is a Google Apps Script (GAS) that automates the process of extract
   - **Orange Range**: This area is designated for the user to input the original data. It's crucial to ensure that the correct information is entered into each column.
   - **Red Range**: This area displays the results of the comparison. If an item matches the original data, it will display "MATCH". If it doesn't match, it will display "NOT MATCH" or "EMPTY" and other information, depending on the situation. The "Check" section provides a final result, indicating whether all items have matched (OK) or not (CAREFUL).
   <div style="margin-left: 30px">
-    <img src="assets/images/check-url-share-email.png" alt="Image of Pass Share Email Sheet" width="550" height="350">
+    <img src="assets/images/check-url-share-email.png" alt="Image of Pass Share Email Sheet" width="500" height="200">
   </div>    
 
 ## Key Components of Script
