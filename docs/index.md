@@ -91,9 +91,9 @@ This project is a Google Apps Script (GAS) that automates the process of extract
 
   - **Orange Range**: This area is designated for the user to input the original data. It's crucial to ensure that the correct information is entered into each column.
   - **Red Range**: This area displays the results of the comparison. If an item matches the original data, it will display "MATCH". If it doesn't match, it will display "NOT MATCH" or "EMPTY" and other information, depending on the situation. The "Check" section provides a final result, indicating whether all items have matched (OK) or not (CAREFUL).
-  <div style="margin-left: 30px">
-    <img src="assets/images/check-url-share-email.png" alt="Image of Pass Share Email Sheet" width="500" height="200">
-  </div>    
+    <div style="margin-left: 30px">
+      <img src="assets/images/check-url-share-email.png" alt="Image of Pass Share Email Sheet" width="500" height="200">
+    </div>    
 
 ## Key Components of Script
 
