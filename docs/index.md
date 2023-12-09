@@ -45,7 +45,7 @@ This project is a Google Apps Script (GAS) that automates the process of extract
 
 2. **Processing Emails and Updating Sheets**: The script reads emails based on the specified subjects and body phrases, categorizes them, and extracts the designated items. After processing the emails, the script updates designated Google Sheets with the extracted information. The type of information extracted and updated on the sheets depends on the function that is processing the emails:
 
-  - **`Display URL Share Mail Info`**: This extracts URL share mail information from the emails and updates it on the sheet.
+  - **Display URL Share Mail Info**: This extracts URL share mail information from the emails and updates it on the sheet.
 
     The target email elements are specified in `Initial Setting` sheet:
 
@@ -57,7 +57,7 @@ This project is a Google Apps Script (GAS) that automates the process of extract
 
     The extracted information includes the following:
 
-    - Recipients: Only the email address is extracted, excluding the account name. For instance, from "Taro TANAKA<xxxx@gmail.com>", only "xxxx@gmail.com" is extracted.
+    - Recipients: Only the email address is extracted, excluding the account name. For instance, from "Taro TANAKA＜xxxx@gmail.com＞", only "xxxx@gmail.com" is extracted.
     - Subject: The subject line of the email.
     - Body: The main content of the email.
     - Attachment File Name: The name of any attached files.
@@ -66,7 +66,7 @@ This project is a Google Apps Script (GAS) that automates the process of extract
       <img src="assets/images/display-url-share-email.png" alt="Image of URL Share Email Keys" width="500" height="300">
     </div>
 
-  - **`Display Result and Pass Mail Info`**: This function handles two types of emails simultaneously: result share email and pass mail.
+  - **Display Result and Pass Mail Info**: This function handles two types of emails simultaneously: result share email and pass mail.
 
       - **Result Share Email**: The function extracts target emails with the designated subject declared in cell C2. It then sorts out the emails depending on the body phrase declared in cell C4 for full faculty and cell C5 for adjunct faculty. The extracted information (Recipients, Subject, Body, Attachment File Name, Faculty ID) is then displayed in the sheets whose names are declared in cells C7 and C8.
       <div style="margin-left: 30px">
