@@ -76,12 +76,12 @@ This project is a Google Apps Script (GAS) that automates the process of extract
         <img src="assets/images/display-result-share-full-email.png" alt="Image of Result Share Email Sheet" width="500" height="300">
       </div>      
       <div style="margin-left: 30px">
-        <img src="assets/images/display-result-share-adj-email.png" alt="Image of Result Share Email Sheet" width="300" height="100">
+        <img src="assets/images/display-result-share-adj-email.png" alt="Image of Result Share Email Sheet" width="400" height="200">
       </div>      
 
       - **Pass Mail**: The function extracts target emails with the subject declared in cell C3. The extracted information (Recipients, Subject, Body) is then displayed in the sheet whose name is declared in cell C9.
       <div style="margin-left: 30px">
-        <img src="assets/images/keys-pass-share-email.png" alt="Image of Pass Share Email Keys" width="300" height="100">
+        <img src="assets/images/keys-pass-share-email.png" alt="Image of Pass Share Email Keys" width="400" height="200">
       </div>
       <div style="margin-left: 30px">
         <img src="assets/images/display-pass-share-email.png" alt="Image of Pass Share Email Sheet" width="500" height="300">
