@@ -65,14 +65,14 @@ This project is a Google Apps Script (GAS) that automates the process of extract
     
       ![Image of Result Share Email Sheet](assets/images/display-result-share-full-email.png){: .resize-image}
     
-      ![Image of Result Share Email Sheet](assets/images/display-result-share-adj-email.png) {: .resize-image}
+      ![Image of Result Share Email Sheet](assets/images/display-result-share-adj-email.png){: .resize-image}
 
       - **Pass Mail**: The function extracts target emails with the subject declared in cell C3. The extracted information (Recipients, Subject, Body) is then displayed in the sheet
         whose name is declared in cell C9.
         
       ![Image of Pass Share Email Keys](assets/images/keys-pass-share-email.png){: .resize-image}
     
-      ![Image of Pass Share Email Sheet](assets/images/display-pass-share-email.png) {: .resize-image}
+      ![Image of Pass Share Email Sheet](assets/images/display-pass-share-email.png){: .resize-image}
 
 3. **Comparing Email Information and Original Information for Final Check**: This process involves comparing the information extracted from emails with the original data you have. Sheets are pre-set for each type of email (URL share, result share, and pass mail) to facilitate this comparison. These sheets, along with the sheets displaying email information, have Google Sheet formulas set up for automatic comparison.
 
@@ -80,7 +80,7 @@ This project is a Google Apps Script (GAS) that automates the process of extract
   - **Red Range**: This area displays the results of the comparison. If an item matches the original data, it will display "MATCH". If it doesn't match, it will display "NOT MATCH" or
     "EMPTY" and other information, depending on the situation. The "Check" section provides a final result, indicating whether all items have matched (OK) or not (CAREFUL).
   
-  ![Image of Pass Share Email Sheet](assets/images/check-url-share-email.png)  {: .resize-image}
+  ![Image of Pass Share Email Sheet](assets/images/check-url-share-email.png){: .resize-image}
 
 ## Key Components of Script
 
