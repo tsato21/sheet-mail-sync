@@ -4,6 +4,11 @@ body {
   width: 100%;
 }
 
+.resize-image {
+    width: 300px;
+    height: auto;
+}
+
 a {
   color: blue; /* This will make all links blue */
   text-decoration: none;
