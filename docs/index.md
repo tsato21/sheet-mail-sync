@@ -20,7 +20,7 @@ This project is a Google Apps Script (GAS) that automates the process of extract
 1. **Open Your Google Sheet**: Access <a href="https://docs.google.com/spreadsheets/d/1RiKE3KzWwea29mkPuIy1mrZZ2Rnk_L-e-yydLZ-5aHk/edit#gid=771932269" target="_blank" rel="noopener noreferrer">Sample Google Sheet</a>.
 2. **Copy the Google Sheet** to create your own editable version.
 3. **Conduct GAS Authorization**: In the `Initial Setting` sheet, click the Initial Setting button to start the authorization process for Google Apps Script.
-   ![Image of Initial Setting Button](assets/images/initial-setting.png)
+   ![Image of Initial Setting Button](assets/images/initial-setting.png){: .resize-image}
 
 4. **Customize Values**: 
   - **Customize the values in orange range of each sheet** The pre-set information is sample one. Customize them to match your needs.
