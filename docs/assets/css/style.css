@@ -50,4 +50,21 @@ footer {
   color: #00008B; /* Change the color to red on hover, or choose your own color */
 }
 
+/* This is a media query that applies styles if the screen width is 768px or less */
+@media (max-width: 768px) {
+  #table-of-contents {
+    width: 100%; /* Make the ToC full width */
+    position: static; /* Stack it above the main content instead of fixed positioning */
+    overflow-y: visible; /* Adjust overflow as necessary */
+  }
+
+  #main-content {
+    margin-left: 0; /* Remove the margin since ToC is no longer to the side */
+  }
+
+  header, footer {
+    padding-left: 0; /* Remove the padding for header and footer */
+  }
+}
+
 /* Add additional styles as needed */
