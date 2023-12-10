@@ -56,7 +56,7 @@ This project is a Google Apps Script (GAS) that automates the process of extract
     - Faculty ID: This is derived from the attachment file name. All of the attachments are ".zip" file (if the file type is different, please modify the script). The part before
       ".zip" is considered the faculty ID. For example, from "A9999999.zip", the ID is "A9999999".
   
-    ![Image of URL Share Email Keys](assets/images/display-url-share-email.png){: .resize-image}
+      ![Image of URL Share Email Keys](assets/images/display-url-share-email.png){: .resize-image}
 
   - **Display Result and Pass Mail Info**: This function handles two types of emails simultaneously: result share email and pass mail.
 
@@ -78,7 +78,7 @@ This project is a Google Apps Script (GAS) that automates the process of extract
         ![Image of Pass Share Email Sheet](assets/images/display-pass-share-email.png){: .resize-image}
 
 
-4. **Comparing Email Information and Original Information for Final Check**: This process involves comparing the information extracted from emails with the original data you have. Sheets are pre-set for each type of email (URL share, result share, and pass mail) to facilitate this comparison. These sheets, along with the sheets displaying email information, have Google Sheet formulas set up for automatic comparison.
+3. **Comaparing Email Information and Original Information for Final Check**: This process involves comparing the information extracted from emails with the original data you have. Sheets are pre-set for each type of email (URL share, result share, and pass mail) to facilitate this comparison. These sheets, along with the sheets displaying email information, have Google Sheet formulas set up for automatic comparison.
 
   - **Orange Range**: This area is designated for the user to input the original data. It's crucial to ensure that the correct information is entered into each column.
   - **Red Range**: This area displays the results of the comparison. If an item matches the original data, it will display "MATCH". If it doesn't match, it will display "NOT MATCH" or
