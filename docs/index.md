@@ -75,7 +75,7 @@ This project is a Google Apps Script (GAS) that automates the process of extract
     
       ![Image of Pass Share Email Sheet](assets/images/display-pass-share-email.png){: .resize-image}
 
-3. **Comparing Email Information and Original Information for Final Check**: This process involves comparing the information extracted from emails with the original data you have. Sheets are pre-set for each type of email (URL share, result share, and pass mail) to facilitate this comparison. These sheets, along with the sheets displaying email information, have Google Sheet formulas set up for automatic comparison.
+4. **Comparing Email Information and Original Information for Final Check**: This process involves comparing the information extracted from emails with the original data you have. Sheets are pre-set for each type of email (URL share, result share, and pass mail) to facilitate this comparison. These sheets, along with the sheets displaying email information, have Google Sheet formulas set up for automatic comparison.
 
   - **Orange Range**: This area is designated for the user to input the original data. It's crucial to ensure that the correct information is entered into each column.
   - **Red Range**: This area displays the results of the comparison. If an item matches the original data, it will display "MATCH". If it doesn't match, it will display "NOT MATCH" or
