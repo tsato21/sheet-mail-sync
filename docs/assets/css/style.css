@@ -5,7 +5,7 @@ body {
 }
 
 .resize-image {
-    width: 350px;
+    width: auto;
     height: auto;
 }
 
