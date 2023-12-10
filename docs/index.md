@@ -33,6 +33,7 @@ This project is a Google Apps Script (GAS) that automates the process of extract
 
 1. **Custom Menu in Google Sheets**: The script automatically adds Custom Menu to your Google Sheet. Use this menu to execute script functions like `Display URL Share Mail Info` and
    `Display Result and Pass Mail Info`.
+   
    ![Image of Custom Menu Button](assets/images/custom-menu.png){: .resize-image}
 
 3. **Processing Emails and Updating Sheets**: The script reads emails based on the specified subjects and body phrases, categorizes them, and extracts the designated items. After processing the emails, the script updates designated Google Sheets with the extracted information. The type of information extracted and updated on the sheets depends on the function that is processing the emails:
