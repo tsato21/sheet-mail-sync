@@ -9,20 +9,22 @@ class GmailProcessor {
 
   processAllThreads() {
     const threads = this.searchEmails();
-    return threads.map(thread => this.processThread(thread));
+    return threads.map((thread) => this.processThread(thread));
   }
 
   processThread(thread) {
     let messages = thread.getMessages();
     let firstMessage = messages[0];
-    let recipients = this.extractEmailAddresses(firstMessage.getTo()).join(', ');
+    let recipients = this.extractEmailAddresses(firstMessage.getTo()).join(
+      ', '
+    );
     let subject = firstMessage.getSubject();
     let body = firstMessage.getPlainBody();
     let attachments = firstMessage.getAttachments();
     let attachment = attachments.length > 0 ? attachments[0].getName() : '';
     let facultyId = this.extractFacultyId(attachment);
 
-    return [recipients, subject, body, attachment,facultyId];
+    return [recipients, subject, body, attachment, facultyId];
   }
 
   sortRecordsByFacultyType(records, fullFacultyPhrase, adjunctFacultyPhrase) {
@@ -41,7 +43,7 @@ class GmailProcessor {
 
     return {
       fullFacultyRecords,
-      adjunctFacultyRecords
+      adjunctFacultyRecords,
     };
   }
 
@@ -77,7 +79,8 @@ class SheetManager {
 
   getSheet(sheetName) {
     if (!this.sheetCache[sheetName]) {
-      const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName);
+      const sheet =
+        SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName);
       if (!sheet) {
         throw new Error(`Sheet not found: ${sheetName}`);
       }
@@ -88,10 +91,10 @@ class SheetManager {
 
   clearContent(sheetName) {
     const sheet = this.getSheet(sheetName);
-    if(sheetName === PASS_SHARE_SHEETNAME){
-      sheet.getRange("A2:D").clearContent();
+    if (sheetName === PASS_SHARE_SHEETNAME) {
+      sheet.getRange('A2:D').clearContent();
     } else {
-      sheet.getRange("A2:E").clearContent();
+      sheet.getRange('A2:E').clearContent();
     }
   }
 
@@ -103,7 +106,9 @@ class SheetManager {
   }
 
   showCompleteMessage(sheetName) {
-    Browser.msgBox(`Information has been successfully displayed in ${sheetName}`);
+    Browser.msgBox(
+      `Information has been successfully displayed in ${sheetName}`
+    );
   }
 }
 
@@ -112,7 +117,10 @@ class SheetManager {
  */
 function showAuthorizationDialog() {
   let ss = SpreadsheetApp.getActiveSpreadsheet();
-  Browser.msgBox('Authorization has been granted. You can now use the script functionalities.', Browser.Buttons.OK);
+  Browser.msgBox(
+    'Authorization has been granted. You can now use the script functionalities.',
+    Browser.Buttons.OK
+  );
 }
 
 function onOpen() {
@@ -120,10 +128,12 @@ function onOpen() {
   ui.createMenu('Custom Menu')
     .addItem('Display URL Share Mail Info', 'displayURLShareMailInfo')
     .addSeparator()
-    .addItem('Display Result and Pass Mail Info', 'displayResultAndPassMailInfo')
+    .addItem(
+      'Display Result and Pass Mail Info',
+      'displayResultAndPassMailInfo'
+    )
     .addToUi();
 }
-
 
 function displayURLShareMailInfo() {
   try {
@@ -133,9 +143,13 @@ function displayURLShareMailInfo() {
     sheetManager.clearContent(URL_SHARE_SHEETNAME); // Pass sheet name
     sheetManager.writeToSheet(URL_SHARE_SHEETNAME, recordsURLShare); // Pass sheet name and data
     sheetManager.showCompleteMessage(URL_SHARE_SHEETNAME);
-  } catch(e) {
-    console.error(`Error while processing URL_SHARE: ${e.toString()} at ${e.stack}`);
-    Browser.msgBox(`Error while processing URL_SHARE. Contact the owner of this script.`);
+  } catch (e) {
+    console.error(
+      `Error while processing URL_SHARE: ${e.toString()} at ${e.stack}`
+    );
+    Browser.msgBox(
+      `Error while processing URL_SHARE. Contact the owner of this script.`
+    );
   }
 }
 
@@ -143,18 +157,29 @@ function displayResultAndPassMailInfo() {
   try {
     const resultGmailProcessor = new GmailProcessor(RESULT_SHARE_SUBJECT);
     let recordsResultShare = resultGmailProcessor.processAllThreads();
-    let sortedRecordsByFacultyType = resultGmailProcessor.sortRecordsByFacultyType(recordsResultShare, RESULT_SHARE_FULFAC_BODY, RESULT_SHARE_ADJFAC_BODY);
+    let sortedRecordsByFacultyType =
+      resultGmailProcessor.sortRecordsByFacultyType(
+        recordsResultShare,
+        RESULT_SHARE_FULFAC_BODY,
+        RESULT_SHARE_ADJFAC_BODY
+      );
 
     const sheetManager = new SheetManager();
 
     // Full Faculty Sheet Operations
     sheetManager.clearContent(RESULT_SHARE_FULFAC_SHEETNAME); // Clear existing content
-    sheetManager.writeToSheet(RESULT_SHARE_FULFAC_SHEETNAME, sortedRecordsByFacultyType.fullFacultyRecords);
+    sheetManager.writeToSheet(
+      RESULT_SHARE_FULFAC_SHEETNAME,
+      sortedRecordsByFacultyType.fullFacultyRecords
+    );
     sheetManager.showCompleteMessage(RESULT_SHARE_FULFAC_SHEETNAME);
 
     // Adjunct Faculty Sheet Operations
     sheetManager.clearContent(RESULT_SHARE_ADJFAC_SHEETNAME); // Clear existing content
-    sheetManager.writeToSheet(RESULT_SHARE_ADJFAC_SHEETNAME, sortedRecordsByFacultyType.adjunctFacultyRecords);
+    sheetManager.writeToSheet(
+      RESULT_SHARE_ADJFAC_SHEETNAME,
+      sortedRecordsByFacultyType.adjunctFacultyRecords
+    );
     sheetManager.showCompleteMessage(RESULT_SHARE_ADJFAC_SHEETNAME);
 
     // Pass Mail Processor and Sheet Operations
@@ -163,9 +188,14 @@ function displayResultAndPassMailInfo() {
     sheetManager.clearContent(PASS_SHARE_SHEETNAME); // Clear existing content
     sheetManager.writeToSheet(PASS_SHARE_SHEETNAME, recordsPassShare);
     sheetManager.showCompleteMessage(PASS_SHARE_SHEETNAME);
-
-  } catch(e) {
-    console.error(`Error while processing RESULT_SHARE and PASS_SHARE: ${e.toString()} at ${e.stack}`);
-    Browser.msgBox(`Error while processing RESULT_SHARE and PASS_SHARE. Contact the owner of this script.`);
+  } catch (e) {
+    console.error(
+      `Error while processing RESULT_SHARE and PASS_SHARE: ${e.toString()} at ${
+        e.stack
+      }`
+    );
+    Browser.msgBox(
+      `Error while processing RESULT_SHARE and PASS_SHARE. Contact the owner of this script.`
+    );
   }
 }
