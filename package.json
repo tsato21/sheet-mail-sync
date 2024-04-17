@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/tsato21/sheet-mail-sync/issues"
   },
-  "homepage": "https://tsato21.github.io/scripts-showcase/gas-tools/each-tool/sheet-mail-sync",
+  "homepage": "https://tsato21.github.io/gas-tools/each-tool/sheet-mail-sync",
   "devDependencies": {
     "@google/clasp": "^2.4.2",
     "@types/google-apps-script": "^1.0.64",
